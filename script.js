@@ -1,6 +1,6 @@
 let counter = 0;
-let firstSelection = "";
-let secondSelection = "";
+let frstSelection = "";
+let scdSelection = "";
 
 const cards = document.querySelectorAll(".cards .card");
 cards.forEach((card) => {
@@ -8,15 +8,15 @@ cards.forEach((card) => {
     card.classList.add("clicked");
 
     if (counter === 0) {
-      firstSelection = card.getAttribute("animal");
+      frstSelection = card.getAttribute("animal");
       counter++;
     } else {
-      secondSelection = card.getAttribute("animal");
+      scdSelection = card.getAttribute("animal");
       counter = 0;
 
-      if (firstSelection === secondSelection) {
+      if (frstSelection === scdSelection) {
         const goodCards = document.querySelectorAll(
-          ".card[animal='" + firstSelection + "']"
+          ".card[animal='" + frstSelection + "']"
         );
 
         goodCards[0].classList.add("correct");
@@ -38,7 +38,7 @@ cards.forEach((card) => {
       }
     }
 
-    console.log(firstSelection);
-    console.log(secondSelection);
+    console.log(frstSelection);
+    console.log(scdSelection);
   });
 });
